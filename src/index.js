@@ -7,37 +7,30 @@ import ReactDOM from "react-dom"
 
 
 // Verion 1
-function Greeting() {
+function BookList() {
   return(
-    <div>
-      <Person />
-      <Message />
-    </div>
+    <section>
+      <Book/>
+      
+    </section>
   ) 
 }
 
-// Version 2, can get very compicated with more nested components
-// const Greeting = () => {
-//   return React.createElement("h1",{},"hello world")
-// }
-
-const Person = () => {
-  return (
-    <div>
-      <h2>Radim Simanek</h2>
-      <h4>from CZech Republic</h4>
-    </div>
-  )
-
-} 
-
-const Message = () => {
-  return <p>
-    This is my message
-  </p>
+const Book = () => {
+  return <article>
+    <Image />
+    <Title/>
+    <Author/>
+  </article>
 }
 
-// I need to use self closing tag "</>"
-ReactDOM.render(<Greeting />, document.getElementById('root'))
+const Image = () => <img src = "https://m.media-amazon.com/images/I/51h3GkZzvnL._AC_SL1000_.jpg" alt = "" width="300" height="350"  />
+
+const Title = () => <h1>Fire HD TV</h1>
+
+const Author = () => <h4>Amazon</h4>
+
+// I need to use self closing tag "</>" otherwise it won't work
+ReactDOM.render(<BookList />, document.getElementById('root'))
 
 
