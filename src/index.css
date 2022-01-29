@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #abcfeb;
+  color: #222;
+}
+
+.booklist {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 5rem auto;
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .booklist {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.book {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 2rem 2rem;
+}
+
+.book h1 {
+  margin-top: 0.5rem;
+  letter-spacing: 5px;
+}
+
+.book h4 {
+  color: #617d98;
+  font-size: 0.75rem;
+  margin-top: 0.23rem;
+}
+
+.book img {
+  border-radius: 0.5rem;
+  max-width: 100%;
+  height: auto;
+}
