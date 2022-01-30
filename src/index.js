@@ -1,36 +1,24 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import "./index.css" // this means that file is in same folder
+import "./index.css" // "./" this means the file is in same folder, extension is needed for css file
 
 // for stateless functional component (doesn't have a state)
 // always use return to return JSX
 // use capital letter for function name to let React know that this function is a Component
 
-// Setup Variables
-const books = [
-      {
-        id:1,
-        img: "https://m.media-amazon.com/images/I/51h3GkZzvnL._AC_SL1000_.jpg",
-        title: "Fire HD TV",
-        author: "Amazon"
-      },
-      {
-        id:2,
-        img: "https://m.media-amazon.com/images/I/51nd43g96sL._SL1000_.jpg",
-        title: "Ring Door Bell",
-        author: "Amazon"
-      },
-      {
-        id:3,
-        img: "https://m.media-amazon.com/images/I/51fm5Nh4PKL._AC_SL1200_.jpg",
-        title: "Food Processor",
-        author: "Kenwood"
-      },
-]
+// Import Variables
+import {books} from './books' // no need for file extension as I import JavaScript
+
+// Import component
+import Book from './Book'
+
+// just example of import
+import {greeting} from './testing/testing'
 
 
 // main function which is containing child elements (functions)
 function BookList() {
+  console.log(greeting)
   return(
     <section className="booklist">
       {books.map((book, index)=>{
@@ -39,17 +27,6 @@ function BookList() {
         )
       })}
     </section>
-  )
-}
-
-const Book = (props) => {
-  const {img, title, author} = props // as same as putting it directly into: const Book = ({img, title, author})
-  return (
-  <article className="book">
-    <img src = {img} alt = "" />
-    <h1>{title.toUpperCase()}</h1>
-    <h4>From: {author}</h4>
-  </article>
   )
 }
 
